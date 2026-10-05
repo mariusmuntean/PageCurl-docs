@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct CurlPose | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct CurlPose | PageCurl.Maui ">
+      
+      <meta name="description" content="The geometry state consumed by a renderer for one frame.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PageCurl.Core.CurlPose">
+
+
+
+  <h1 id="PageCurl_Core_CurlPose" data-uid="PageCurl.Core.CurlPose" class="text-break">
+Struct CurlPose  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">PageCurl</span>.<a class="xref" href="PageCurl.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PageCurl.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The geometry state consumed by a renderer for one frame.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct CurlPose : IEquatable&lt;CurlPose&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PageCurl_Core_CurlPose__ctor_" data-uid="PageCurl.Core.CurlPose.#ctor*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose__ctor_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_System_Single_PageCurl_Core_PageTurnDirection_System_Boolean_" data-uid="PageCurl.Core.CurlPose.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Single,System.Single,PageCurl.Core.PageTurnDirection,System.Boolean)">
+  CurlPose(Vector2, Vector2, float, float, PageTurnDirection, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The geometry state consumed by a renderer for one frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CurlPose(Vector2 Position, Vector2 Direction, float Radius, float Progress, PageTurnDirection TurnDirection, bool IsActive)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Direction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Radius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>Progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>TurnDirection</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+    <dt><code>IsActive</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PageCurl_Core_CurlPose_Direction_" data-uid="PageCurl.Core.CurlPose.Direction*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Direction" data-uid="PageCurl.Core.CurlPose.Direction">
+  Direction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Direction { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_DragStart_" data-uid="PageCurl.Core.CurlPose.DragStart*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_DragStart" data-uid="PageCurl.Core.CurlPose.DragStart">
+  DragStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The pointer position projected onto the selected free edge at gesture start.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 DragStart { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_FreeEdge_" data-uid="PageCurl.Core.CurlPose.FreeEdge*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_FreeEdge" data-uid="PageCurl.Core.CurlPose.FreeEdge">
+  FreeEdge
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageEdge FreeEdge { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_HasDragStart_" data-uid="PageCurl.Core.CurlPose.HasDragStart*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_HasDragStart" data-uid="PageCurl.Core.CurlPose.HasDragStart">
+  HasDragStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates that <a class="xref" href="PageCurl.Core.CurlPose.html#PageCurl_Core_CurlPose_DragStart">DragStart</a> is available for renderer anchoring.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasDragStart { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_HingeEdge_" data-uid="PageCurl.Core.CurlPose.HingeEdge*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_HingeEdge" data-uid="PageCurl.Core.CurlPose.HingeEdge">
+  HingeEdge
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageEdge HingeEdge { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_IsActive_" data-uid="PageCurl.Core.CurlPose.IsActive*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_IsActive" data-uid="PageCurl.Core.CurlPose.IsActive">
+  IsActive
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsActive { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_LockedAnchor_" data-uid="PageCurl.Core.CurlPose.LockedAnchor*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_LockedAnchor" data-uid="PageCurl.Core.CurlPose.LockedAnchor">
+  LockedAnchor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageAnchor LockedAnchor { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageAnchor.html">PageAnchor</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Position_" data-uid="PageCurl.Core.CurlPose.Position*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Position" data-uid="PageCurl.Core.CurlPose.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Position { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Progress_" data-uid="PageCurl.Core.CurlPose.Progress*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Progress" data-uid="PageCurl.Core.CurlPose.Progress">
+  Progress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Progress { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Radius_" data-uid="PageCurl.Core.CurlPose.Radius*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Radius" data-uid="PageCurl.Core.CurlPose.Radius">
+  Radius
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Radius { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_TurnDirection_" data-uid="PageCurl.Core.CurlPose.TurnDirection*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_TurnDirection" data-uid="PageCurl.Core.CurlPose.TurnDirection">
+  TurnDirection
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnDirection TurnDirection { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PageCurl_Core_CurlPose_Deconstruct_" data-uid="PageCurl.Core.CurlPose.Deconstruct*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Deconstruct_System_Numerics_Vector2__System_Numerics_Vector2__System_Single__System_Single__PageCurl_Core_PageTurnDirection__System_Boolean__" data-uid="PageCurl.Core.CurlPose.Deconstruct(System.Numerics.Vector2@,System.Numerics.Vector2@,System.Single@,System.Single@,PageCurl.Core.PageTurnDirection@,System.Boolean@)">
+  Deconstruct(out Vector2, out Vector2, out float, out float, out PageTurnDirection, out bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deconstruct(out Vector2 Position, out Vector2 Direction, out float Radius, out float Progress, out PageTurnDirection TurnDirection, out bool IsActive)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Direction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Radius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>Progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>TurnDirection</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+    <dt><code>IsActive</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Equals_" data-uid="PageCurl.Core.CurlPose.Equals*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Equals_PageCurl_Core_CurlPose_" data-uid="PageCurl.Core.CurlPose.Equals(PageCurl.Core.CurlPose)">
+  Equals(CurlPose)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(CurlPose other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Equals_" data-uid="PageCurl.Core.CurlPose.Equals*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Equals_System_Object_" data-uid="PageCurl.Core.CurlPose.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_GetHashCode_" data-uid="PageCurl.Core.CurlPose.GetHashCode*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_GetHashCode" data-uid="PageCurl.Core.CurlPose.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_Inactive_" data-uid="PageCurl.Core.CurlPose.Inactive*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_Inactive_PageCurl_Core_PageTurnDirection_" data-uid="PageCurl.Core.CurlPose.Inactive(PageCurl.Core.PageTurnDirection)">
+  Inactive(PageTurnDirection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CurlPose Inactive(PageTurnDirection direction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_ToString_" data-uid="PageCurl.Core.CurlPose.ToString*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_ToString" data-uid="PageCurl.Core.CurlPose.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="PageCurl_Core_CurlPose_op_Equality_" data-uid="PageCurl.Core.CurlPose.op_Equality*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_op_Equality_PageCurl_Core_CurlPose_PageCurl_Core_CurlPose_" data-uid="PageCurl.Core.CurlPose.op_Equality(PageCurl.Core.CurlPose,PageCurl.Core.CurlPose)">
+  operator ==(CurlPose, CurlPose)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(CurlPose left, CurlPose right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_CurlPose_op_Inequality_" data-uid="PageCurl.Core.CurlPose.op_Inequality*"></a>
+
+  <h3 id="PageCurl_Core_CurlPose_op_Inequality_PageCurl_Core_CurlPose_PageCurl_Core_CurlPose_" data-uid="PageCurl.Core.CurlPose.op_Inequality(PageCurl.Core.CurlPose,PageCurl.Core.CurlPose)">
+  operator !=(CurlPose, CurlPose)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(CurlPose left, CurlPose right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

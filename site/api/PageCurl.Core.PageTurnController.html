@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PageTurnController | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PageTurnController | PageCurl.Maui ">
+      
+      <meta name="description" content="Tracks a finger drag and settles it to the nearest page endpoint using a critically damped spring. It has no UI or platform dependencies.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PageCurl.Core.PageTurnController">
+
+
+
+  <h1 id="PageCurl_Core_PageTurnController" data-uid="PageCurl.Core.PageTurnController" class="text-break">
+Class PageTurnController  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">PageCurl</span>.<a class="xref" href="PageCurl.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PageCurl.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Tracks a finger drag and settles it to the nearest page endpoint using a
+critically damped spring. It has no UI or platform dependencies.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class PageTurnController</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PageTurnController</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnController__ctor_" data-uid="PageCurl.Core.PageTurnController.#ctor*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController__ctor_PageCurl_Core_PageCurlOptions_" data-uid="PageCurl.Core.PageTurnController.#ctor(PageCurl.Core.PageCurlOptions)">
+  PageTurnController(PageCurlOptions?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnController(PageCurlOptions? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="PageCurl.Core.PageCurlOptions.html">PageCurlOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnController_Snapshot_" data-uid="PageCurl.Core.PageTurnController.Snapshot*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_Snapshot" data-uid="PageCurl.Core.PageTurnController.Snapshot">
+  Snapshot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnSnapshot Snapshot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnController_BeginDrag_" data-uid="PageCurl.Core.PageTurnController.BeginDrag*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_BeginDrag_System_Numerics_Vector2_System_Numerics_Vector2_" data-uid="PageCurl.Core.PageTurnController.BeginDrag(System.Numerics.Vector2,System.Numerics.Vector2)">
+  BeginDrag(Vector2, Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeginDrag(Vector2 pointer, Vector2 pageSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pointer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_BeginDrag_" data-uid="PageCurl.Core.PageTurnController.BeginDrag*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_BeginDrag_System_Numerics_Vector2_System_Numerics_Vector2_PageCurl_Core_PageAnchor_" data-uid="PageCurl.Core.PageTurnController.BeginDrag(System.Numerics.Vector2,System.Numerics.Vector2,PageCurl.Core.PageAnchor)">
+  BeginDrag(Vector2, Vector2, PageAnchor)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Begins a drag with either a stationary edge or a pinned corner.
+<a class="xref" href="PageCurl.Core.PageAnchor.html#PageCurl_Core_PageAnchor_Auto">Auto</a> selects an edge from the gesture start.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeginDrag(Vector2 pointer, Vector2 pageSize, PageAnchor lockedAnchor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pointer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>lockedAnchor</code> <a class="xref" href="PageCurl.Core.PageAnchor.html">PageAnchor</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_BeginDrag_" data-uid="PageCurl.Core.PageTurnController.BeginDrag*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_BeginDrag_System_Numerics_Vector2_System_Numerics_Vector2_PageCurl_Core_PageEdge_" data-uid="PageCurl.Core.PageTurnController.BeginDrag(System.Numerics.Vector2,System.Numerics.Vector2,PageCurl.Core.PageEdge)">
+  BeginDrag(Vector2, Vector2, PageEdge)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Begins a drag using a physical edge-aware interaction model. The
+locked edge is the stationary hinge; <a class="xref" href="PageCurl.Core.PageEdge.html#PageCurl_Core_PageEdge_Auto">Auto</a>
+chooses the nearest free edge and its opposite hinge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeginDrag(Vector2 pointer, Vector2 pageSize, PageEdge lockedEdge)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pointer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>lockedEdge</code> <a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_BeginProgrammaticTurn_" data-uid="PageCurl.Core.PageTurnController.BeginProgrammaticTurn*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_BeginProgrammaticTurn_System_Numerics_Vector2_PageCurl_Core_PageTurnDirection_System_Boolean_" data-uid="PageCurl.Core.PageTurnController.BeginProgrammaticTurn(System.Numerics.Vector2,PageCurl.Core.PageTurnDirection,System.Boolean)">
+  BeginProgrammaticTurn(Vector2, PageTurnDirection, bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a full page turn without requiring pointer input.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BeginProgrammaticTurn(Vector2 pageSize, PageTurnDirection direction, bool animate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>direction</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+    <dt><code>animate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_Cancel_" data-uid="PageCurl.Core.PageTurnController.Cancel*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_Cancel_System_Boolean_" data-uid="PageCurl.Core.PageTurnController.Cancel(System.Boolean)">
+  Cancel(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cancel(bool animate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_EndDrag_" data-uid="PageCurl.Core.PageTurnController.EndDrag*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_EndDrag_System_Boolean_" data-uid="PageCurl.Core.PageTurnController.EndDrag(System.Boolean)">
+  EndDrag(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EndDrag(bool animate = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>animate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_GetCurlPose_" data-uid="PageCurl.Core.PageTurnController.GetCurlPose*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_GetCurlPose_System_Numerics_Vector2_" data-uid="PageCurl.Core.PageTurnController.GetCurlPose(System.Numerics.Vector2)">
+  GetCurlPose(Vector2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CurlPose GetCurlPose(Vector2 pageSize)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.CurlPose.html">CurlPose</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_Tick_" data-uid="PageCurl.Core.PageTurnController.Tick*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_Tick_System_Double_" data-uid="PageCurl.Core.PageTurnController.Tick(System.Double)">
+  Tick(double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Advances the settle animation. Returns true while it needs frames.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Tick(double elapsedSeconds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>elapsedSeconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnController_UpdateDrag_" data-uid="PageCurl.Core.PageTurnController.UpdateDrag*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnController_UpdateDrag_System_Numerics_Vector2_System_Double_" data-uid="PageCurl.Core.PageTurnController.UpdateDrag(System.Numerics.Vector2,System.Double)">
+  UpdateDrag(Vector2, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateDrag(Vector2 pointer, double timestampSeconds = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pointer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>timestampSeconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="PageCurl_Core_PageTurnController_PageChangeThresholdCrossed" data-uid="PageCurl.Core.PageTurnController.PageChangeThresholdCrossed">
+  PageChangeThresholdCrossed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;PageChangeThresholdCrossedEventArgs&gt;? PageChangeThresholdCrossed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://github.com/mariusmuntean/PageCurl/blob/fcce5087113e30b7e668a61919a4e73af0c3101b/src/PageCurl.Core/PageTurnTypes.cs">PageChangeThresholdCrossedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Core_PageTurnController_PageTurnCompleted" data-uid="PageCurl.Core.PageTurnController.PageTurnCompleted">
+  PageTurnCompleted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;PageTurnCompletedEventArgs&gt;? PageTurnCompleted</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://github.com/mariusmuntean/PageCurl/blob/fcce5087113e30b7e668a61919a4e73af0c3101b/src/PageCurl.Core/PageTurnTypes.cs">PageTurnCompletedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

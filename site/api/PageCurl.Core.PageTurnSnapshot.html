@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct PageTurnSnapshot | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct PageTurnSnapshot | PageCurl.Maui ">
+      
+      <meta name="description" content="A read-only snapshot of the page turn controller.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PageCurl.Core.PageTurnSnapshot">
+
+
+
+  <h1 id="PageCurl_Core_PageTurnSnapshot" data-uid="PageCurl.Core.PageTurnSnapshot" class="text-break">
+Struct PageTurnSnapshot  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">PageCurl</span>.<a class="xref" href="PageCurl.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PageCurl.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A read-only snapshot of the page turn controller.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct PageTurnSnapshot : IEquatable&lt;PageTurnSnapshot&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot__ctor_" data-uid="PageCurl.Core.PageTurnSnapshot.#ctor*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot__ctor_PageCurl_Core_PageTurnState_PageCurl_Core_PageTurnDirection_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_System_Single_" data-uid="PageCurl.Core.PageTurnSnapshot.#ctor(PageCurl.Core.PageTurnState,PageCurl.Core.PageTurnDirection,System.Numerics.Vector2,System.Numerics.Vector2,System.Single,System.Single)">
+  PageTurnSnapshot(PageTurnState, PageTurnDirection, Vector2, Vector2, float, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>A read-only snapshot of the page turn controller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnSnapshot(PageTurnState State, PageTurnDirection Direction, Vector2 DragStartPosition, Vector2 PointerPosition, float Progress, float TargetProgress)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>State</code> <a class="xref" href="PageCurl.Core.PageTurnState.html">PageTurnState</a></dt>
+    <dd></dd>
+    <dt><code>Direction</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+    <dt><code>DragStartPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>PointerPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>TargetProgress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_Direction_" data-uid="PageCurl.Core.PageTurnSnapshot.Direction*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_Direction" data-uid="PageCurl.Core.PageTurnSnapshot.Direction">
+  Direction
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnDirection Direction { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_DragStartPosition_" data-uid="PageCurl.Core.PageTurnSnapshot.DragStartPosition*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_DragStartPosition" data-uid="PageCurl.Core.PageTurnSnapshot.DragStartPosition">
+  DragStartPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 DragStartPosition { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_FreeEdge_" data-uid="PageCurl.Core.PageTurnSnapshot.FreeEdge*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_FreeEdge" data-uid="PageCurl.Core.PageTurnSnapshot.FreeEdge">
+  FreeEdge
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The physical edge or corner the user is pulling from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageEdge FreeEdge { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_HingeEdge_" data-uid="PageCurl.Core.PageTurnSnapshot.HingeEdge*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_HingeEdge" data-uid="PageCurl.Core.PageTurnSnapshot.HingeEdge">
+  HingeEdge
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The physical edge currently acting as the stationary hinge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageEdge HingeEdge { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_LockedAnchor_" data-uid="PageCurl.Core.PageTurnSnapshot.LockedAnchor*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_LockedAnchor" data-uid="PageCurl.Core.PageTurnSnapshot.LockedAnchor">
+  LockedAnchor
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The edge or corner that remains stationary during the turn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageAnchor LockedAnchor { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageAnchor.html">PageAnchor</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_PointerPosition_" data-uid="PageCurl.Core.PageTurnSnapshot.PointerPosition*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_PointerPosition" data-uid="PageCurl.Core.PageTurnSnapshot.PointerPosition">
+  PointerPosition
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 PointerPosition { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_Progress_" data-uid="PageCurl.Core.PageTurnSnapshot.Progress*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_Progress" data-uid="PageCurl.Core.PageTurnSnapshot.Progress">
+  Progress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Progress { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_State_" data-uid="PageCurl.Core.PageTurnSnapshot.State*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_State" data-uid="PageCurl.Core.PageTurnSnapshot.State">
+  State
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnState State { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageTurnState.html">PageTurnState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_TargetProgress_" data-uid="PageCurl.Core.PageTurnSnapshot.TargetProgress*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_TargetProgress" data-uid="PageCurl.Core.PageTurnSnapshot.TargetProgress">
+  TargetProgress
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TargetProgress { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_Deconstruct_" data-uid="PageCurl.Core.PageTurnSnapshot.Deconstruct*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_Deconstruct_PageCurl_Core_PageTurnState__PageCurl_Core_PageTurnDirection__System_Numerics_Vector2__System_Numerics_Vector2__System_Single__System_Single__" data-uid="PageCurl.Core.PageTurnSnapshot.Deconstruct(PageCurl.Core.PageTurnState@,PageCurl.Core.PageTurnDirection@,System.Numerics.Vector2@,System.Numerics.Vector2@,System.Single@,System.Single@)">
+  Deconstruct(out PageTurnState, out PageTurnDirection, out Vector2, out Vector2, out float, out float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deconstruct(out PageTurnState State, out PageTurnDirection Direction, out Vector2 DragStartPosition, out Vector2 PointerPosition, out float Progress, out float TargetProgress)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>State</code> <a class="xref" href="PageCurl.Core.PageTurnState.html">PageTurnState</a></dt>
+    <dd></dd>
+    <dt><code>Direction</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+    <dt><code>DragStartPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>PointerPosition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+    <dt><code>Progress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>TargetProgress</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_Equals_" data-uid="PageCurl.Core.PageTurnSnapshot.Equals*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_Equals_PageCurl_Core_PageTurnSnapshot_" data-uid="PageCurl.Core.PageTurnSnapshot.Equals(PageCurl.Core.PageTurnSnapshot)">
+  Equals(PageTurnSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(PageTurnSnapshot other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_Equals_" data-uid="PageCurl.Core.PageTurnSnapshot.Equals*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_Equals_System_Object_" data-uid="PageCurl.Core.PageTurnSnapshot.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_GetHashCode_" data-uid="PageCurl.Core.PageTurnSnapshot.GetHashCode*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_GetHashCode" data-uid="PageCurl.Core.PageTurnSnapshot.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_ToString_" data-uid="PageCurl.Core.PageTurnSnapshot.ToString*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_ToString" data-uid="PageCurl.Core.PageTurnSnapshot.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_op_Equality_" data-uid="PageCurl.Core.PageTurnSnapshot.op_Equality*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_op_Equality_PageCurl_Core_PageTurnSnapshot_PageCurl_Core_PageTurnSnapshot_" data-uid="PageCurl.Core.PageTurnSnapshot.op_Equality(PageCurl.Core.PageTurnSnapshot,PageCurl.Core.PageTurnSnapshot)">
+  operator ==(PageTurnSnapshot, PageTurnSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(PageTurnSnapshot left, PageTurnSnapshot right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Core_PageTurnSnapshot_op_Inequality_" data-uid="PageCurl.Core.PageTurnSnapshot.op_Inequality*"></a>
+
+  <h3 id="PageCurl_Core_PageTurnSnapshot_op_Inequality_PageCurl_Core_PageTurnSnapshot_PageCurl_Core_PageTurnSnapshot_" data-uid="PageCurl.Core.PageTurnSnapshot.op_Inequality(PageCurl.Core.PageTurnSnapshot,PageCurl.Core.PageTurnSnapshot)">
+  operator !=(PageTurnSnapshot, PageTurnSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(PageTurnSnapshot left, PageTurnSnapshot right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Core.PageTurnSnapshot.html">PageTurnSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

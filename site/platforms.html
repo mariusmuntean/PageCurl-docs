@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Platform support | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Platform support | PageCurl.Maui ">
+      
+      
+      <link rel="icon" href="images/logo.svg">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="platform-support">Platform support</h1>
+
+<p>PageCurl uses .NET 10, MAUI 10 and SkiaSharp.Views.Maui.Controls 4.150.1.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Minimum</th>
+<th>Validation scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core and neutral MAUI</td>
+<td>.NET 10</td>
+<td>Deterministic tests and isolated package consumer</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>API 24</td>
+<td>Hosted Release build; recorded emulator launch</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>iOS 17</td>
+<td>Hosted simulator build; recorded simulator launch</td>
+</tr>
+<tr>
+<td>Mac Catalyst</td>
+<td>macOS 14 / Catalyst 17</td>
+<td>Hosted build and native rendering/lifecycle assertions; recorded pointer interaction</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Windows 10.0.17763</td>
+<td>CI build gate added; runtime validation still required</td>
+</tr>
+</tbody>
+</table>
+<p>Minimum OS values come from the projects. A compile target such as
+<code>net10.0-windows10.0.19041.0</code> is not the minimum runtime OS version.</p>
+<h2 id="before-shipping-your-reader">Before shipping your reader</h2>
+<p>Test on your supported hardware and OS versions. Measure frame pacing, memory
+and texture lifetime during long reading sessions, particularly on low-end
+Android and current iOS devices. Test VoiceOver/TalkBack, rotation, safe areas,
+background/foreground transitions, reduced motion and video poster behavior.</p>
+<p>Validate your app's signing, archives and store package independently. This
+library's unsigned CI builds and neutral package consumer do not certify store
+submission or hardware performance. Windows has a build gate, but no recorded
+Windows UI or snapshot-pixel certification yet.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

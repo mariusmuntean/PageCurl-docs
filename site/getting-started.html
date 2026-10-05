@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Quick start | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Quick start | PageCurl.Maui ">
+      
+      
+      <link rel="icon" href="images/logo.svg">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="quick-start">Quick start</h1>
+
+<p>You need a .NET 10 MAUI application and the workload for your target platform.
+The repository pins the SDK and workload set in <code>global.json</code>.</p>
+<h2 id="reference-the-library">Reference the library</h2>
+<p>The source repository currently requires access. Until a published package is verified, add a project reference to
+<code>src/PageCurl.Maui/PageCurl.Maui.csproj</code> from the cloned repository. You can also
+pack the projects into a local NuGet feed. The MAUI package depends on Core;
+your application does not need a separate Core reference.</p>
+<h2 id="register-skiasharp">Register SkiaSharp</h2>
+<p>Add the handler registration in <code>MauiProgram.cs</code>:</p>
+<pre><code class="lang-csharp">using SkiaSharp.Views.Maui.Controls.Hosting;
+
+var builder = MauiApp.CreateBuilder();
+builder.UseMauiApp&lt;App&gt;().UseSkiaSharp();
+</code></pre>
+<h2 id="display-a-live-page">Display a live page</h2>
+<p>Add the namespace and control to a XAML page:</p>
+<pre><code class="lang-xml">&lt;ContentPage
+    xmlns=&quot;http://schemas.microsoft.com/dotnet/2021/maui&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+    xmlns:curl=&quot;clr-namespace:PageCurl.Maui;assembly=PageCurl.Maui&quot;&gt;
+    &lt;curl:PageCurlView x:Name=&quot;Reader&quot; PageAspectRatio=&quot;0.75&quot;&gt;
+        &lt;curl:PageCurlView.FrontContent&gt;
+            &lt;Grid BackgroundColor=&quot;#FAF8F1&quot; Padding=&quot;24&quot;&gt;
+                &lt;Label Text=&quot;First page&quot; TextColor=&quot;#1C211F&quot; /&gt;
+            &lt;/Grid&gt;
+        &lt;/curl:PageCurlView.FrontContent&gt;
+    &lt;/curl:PageCurlView&gt;
+&lt;/ContentPage&gt;
+</code></pre>
+<p>The view stays interactive while flat. The control captures it after layout
+and uses that image during the turn. Give the control a nonzero layout size.</p>
+<h2 id="connect-navigation">Connect navigation</h2>
+<p>Maintain the current index in your application. Change it only after a committed
+completion; cancelled turns leave it unchanged.</p>
+<pre><code class="lang-csharp">using PageCurl.Core;
+
+Reader.PageTurnCompleted += (_, e) =&gt;
+{
+    if (!e.Committed) return;
+    pageIndex += e.Direction == PageTurnDirection.Forward ? 1 : -1;
+    Reader.FrontContent = CreatePage(pageIndex);
+};
+</code></pre>
+<p>Use <code>PageNavigationState</code> to enforce first/last boundaries and connect labeled
+Previous/Next buttons through <code>TryTurn</code>. See the sample for complete wiring,
+including readiness and scene changes. Do not start another turn while required
+snapshots are unavailable.</p>
+<p>Read <a href="content.html">images and live content</a> for backside and refresh behavior.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

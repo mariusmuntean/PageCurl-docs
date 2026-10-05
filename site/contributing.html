@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Contributing and validation | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Contributing and validation | PageCurl.Maui ">
+      
+      
+      <link rel="icon" href="images/logo.svg">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="contributing-and-validation">Contributing and validation</h1>
+
+<p>Keep geometry and interaction in Core. Keep MAUI, Skia, dispatcher and device
+work in the adapter. Keep scene and media dependencies in the sample.</p>
+<h2 id="verify-a-change">Verify a change</h2>
+<p>Read the repository requirements before changing behavior. Add a deterministic
+regression that fails before the fix, then run the relevant Core or neutral
+MAUI suite. Rendering and lifecycle changes also need native evidence.</p>
+<p>The Verify workflow runs deterministic tests, a fresh package consumer,
+validation-tool tests, native package checks and platform builds. The
+Documentation workflow builds this site, checks local links and retains the validated site artifact.</p>
+<p>Use the repository validation skills for explicit target commands. Record
+completed evidence under <code>docs/validation/</code>; do not infer a runtime pass from
+an unsigned build or a workflow definition.</p>
+<h2 id="build-these-docs">Build these docs</h2>
+<p>From the repository root:</p>
+<pre><code class="lang-bash">bash tools/build-docs.sh
+</code></pre>
+<p>The pinned local tool manifest selects DocFX. Output goes to <code>.artifacts/site</code>.
+Serve that directory to inspect the site before publishing.
+Run <code>bash tools/publish-docs.sh</code> to rebuild and publish it to the public
+<code>PageCurl-docs</code> repository. Its Pages workflow deploys those static files.
+The source repository uses a GitHub plan that cannot host Pages from a private
+repository; publication therefore uses your existing GitHub credentials. The site includes
+these curated guides and generated public API signatures. Historical logs,
+plans and device identifiers stay in the repository.</p>
+<h2 id="report-an-issue">Report an issue</h2>
+<p>Include the package/commit version, target framework, OS and device model,
+reproduction steps, and the complete first build or runtime error. For visual
+issues, include a small sample and a screenshot of the active turn.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

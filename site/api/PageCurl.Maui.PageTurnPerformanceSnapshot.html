@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct PageTurnPerformanceSnapshot | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct PageTurnPerformanceSnapshot | PageCurl.Maui ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot">
+
+
+
+  <h1 id="PageCurl_Maui_PageTurnPerformanceSnapshot" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot" class="text-break">
+Struct PageTurnPerformanceSnapshot  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">PageCurl</span>.<a class="xref" href="PageCurl.Maui.html">Maui</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PageCurl.Maui.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct PageTurnPerformanceSnapshot : IEquatable&lt;PageTurnPerformanceSnapshot&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot__ctor_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.#ctor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot__ctor_System_Int64_System_Double_System_Double_System_Int64_System_Int64_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.#ctor(System.Int64,System.Double,System.Double,System.Int64,System.Int64)">
+  PageTurnPerformanceSnapshot(long, double, double, long, long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnPerformanceSnapshot(long FrameCount, double LastFrameMilliseconds, double AverageFrameMilliseconds, long LastFrameAllocatedBytes, long MaxFrameAllocatedBytes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FrameCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>LastFrameMilliseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>AverageFrameMilliseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>LastFrameAllocatedBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>MaxFrameAllocatedBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_AverageFrameMilliseconds_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.AverageFrameMilliseconds*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_AverageFrameMilliseconds" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.AverageFrameMilliseconds">
+  AverageFrameMilliseconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double AverageFrameMilliseconds { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_FrameCount_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.FrameCount*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_FrameCount" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.FrameCount">
+  FrameCount
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long FrameCount { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_LastFrameAllocatedBytes_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.LastFrameAllocatedBytes*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_LastFrameAllocatedBytes" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.LastFrameAllocatedBytes">
+  LastFrameAllocatedBytes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long LastFrameAllocatedBytes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_LastFrameMilliseconds_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.LastFrameMilliseconds*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_LastFrameMilliseconds" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.LastFrameMilliseconds">
+  LastFrameMilliseconds
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LastFrameMilliseconds { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_MaxFrameAllocatedBytes_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.MaxFrameAllocatedBytes*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_MaxFrameAllocatedBytes" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.MaxFrameAllocatedBytes">
+  MaxFrameAllocatedBytes
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long MaxFrameAllocatedBytes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_Deconstruct_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Deconstruct*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_Deconstruct_System_Int64__System_Double__System_Double__System_Int64__System_Int64__" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Deconstruct(System.Int64@,System.Double@,System.Double@,System.Int64@,System.Int64@)">
+  Deconstruct(out long, out double, out double, out long, out long)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Deconstruct(out long FrameCount, out double LastFrameMilliseconds, out double AverageFrameMilliseconds, out long LastFrameAllocatedBytes, out long MaxFrameAllocatedBytes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>FrameCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>LastFrameMilliseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>AverageFrameMilliseconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>LastFrameAllocatedBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>MaxFrameAllocatedBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_Equals_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Equals*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_Equals_PageCurl_Maui_PageTurnPerformanceSnapshot_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Equals(PageCurl.Maui.PageTurnPerformanceSnapshot)">
+  Equals(PageTurnPerformanceSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(PageTurnPerformanceSnapshot other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_Equals_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Equals*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_Equals_System_Object_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.Equals(System.Object)">
+  Equals(object)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_GetHashCode_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.GetHashCode*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_GetHashCode" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.GetHashCode">
+  GetHashCode()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_ToString_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.ToString*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_ToString" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.ToString">
+  ToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_op_Equality_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.op_Equality*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_op_Equality_PageCurl_Maui_PageTurnPerformanceSnapshot_PageCurl_Maui_PageTurnPerformanceSnapshot_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.op_Equality(PageCurl.Maui.PageTurnPerformanceSnapshot,PageCurl.Maui.PageTurnPerformanceSnapshot)">
+  operator ==(PageTurnPerformanceSnapshot, PageTurnPerformanceSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(PageTurnPerformanceSnapshot left, PageTurnPerformanceSnapshot right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnPerformanceSnapshot_op_Inequality_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.op_Inequality*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnPerformanceSnapshot_op_Inequality_PageCurl_Maui_PageTurnPerformanceSnapshot_PageCurl_Maui_PageTurnPerformanceSnapshot_" data-uid="PageCurl.Maui.PageTurnPerformanceSnapshot.op_Inequality(PageCurl.Maui.PageTurnPerformanceSnapshot,PageCurl.Maui.PageTurnPerformanceSnapshot)">
+  operator !=(PageTurnPerformanceSnapshot, PageTurnPerformanceSnapshot)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(PageTurnPerformanceSnapshot left, PageTurnPerformanceSnapshot right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PageTurnView | PageCurl.Maui </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PageTurnView | PageCurl.Maui ">
+      
+      <meta name="description" content="A GPU-backed MAUI view that renders a draggable page curl using SkiaSharp. The images are supplied as SKImage instances so applications can own and cache their decoding pipeline.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="PageCurl.Maui">
+            PageCurl.Maui
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="PageCurl.Maui.PageTurnView">
+
+
+
+  <h1 id="PageCurl_Maui_PageTurnView" data-uid="PageCurl.Maui.PageTurnView" class="text-break">
+Class PageTurnView  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">PageCurl</span>.<a class="xref" href="PageCurl.Maui.html">Maui</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PageCurl.Maui.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A GPU-backed MAUI view that renders a draggable page curl using SkiaSharp.
+The images are supplied as SKImage instances so applications can own and
+cache their decoding pipeline.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class PageTurnView : SKGLView, INotifyPropertyChanged, IVisualTreeElement, IEffectControlProvider, IToolTipElement, IContextFlyoutElement, IAnimatable, IViewController, IVisualElementController, IElementController, IGestureController, IGestureRecognizers, IPropertyMapperView, IHotReloadableView, IReplaceableView, ISKGLView, IView, IElement, ITransform</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject">BindableObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element">Element</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.styleableelement">StyleableElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.navigableelement">NavigableElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement">VisualElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view">View</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview">SKGLView</a></div>
+      <div><span class="xref">PageTurnView</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.ivisualtreeelement">IVisualTreeElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.ieffectcontrolprovider">IEffectControlProvider</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.itooltipelement">IToolTipElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.icontextflyoutelement">IContextFlyoutElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.ianimatable">IAnimatable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.iviewcontroller">IViewController</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.ivisualelementcontroller">IVisualElementController</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.ielementcontroller">IElementController</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.internals.igesturecontroller">IGestureController</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.igesturerecognizers">IGestureRecognizers</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.ipropertymapperview">IPropertyMapperView</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.hotreload.ihotreloadableview">IHotReloadableView</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.ireplaceableview">IReplaceableView</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.iskglview">ISKGLView</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.iview">IView</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.ielement">IElement</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.itransform">ITransform</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.ignorepixelscalingproperty">SKGLView.IgnorePixelScalingProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.hasrenderloopproperty">SKGLView.HasRenderLoopProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.enabletoucheventsproperty">SKGLView.EnableTouchEventsProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.invalidatesurface">SKGLView.InvalidateSurface()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.ignorepixelscaling">SKGLView.IgnorePixelScaling</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.hasrenderloop">SKGLView.HasRenderLoop</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.enabletouchevents">SKGLView.EnableTouchEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.canvassize">SKGLView.CanvasSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.grcontext">SKGLView.GRContext</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.paintsurface">SKGLView.PaintSurface</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.views.maui.controls.skglview.touch">SKGLView.Touch</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.verticaloptionsproperty">View.VerticalOptionsProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.horizontaloptionsproperty">View.HorizontalOptionsProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.marginproperty">View.MarginProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.getchildelements">View.GetChildElements(Point)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.gesturerecognizers">View.GestureRecognizers</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.horizontaloptions">View.HorizontalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.margin">View.Margin</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.view.verticaloptions">View.VerticalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.navigationproperty">VisualElement.NavigationProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.styleproperty">VisualElement.StyleProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.inputtransparentproperty">VisualElement.InputTransparentProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isenabledproperty">VisualElement.IsEnabledProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.xproperty">VisualElement.XProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.yproperty">VisualElement.YProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.anchorxproperty">VisualElement.AnchorXProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.anchoryproperty">VisualElement.AnchorYProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.translationxproperty">VisualElement.TranslationXProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.translationyproperty">VisualElement.TranslationYProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.widthproperty">VisualElement.WidthProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.heightproperty">VisualElement.HeightProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotationproperty">VisualElement.RotationProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotationxproperty">VisualElement.RotationXProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotationyproperty">VisualElement.RotationYProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scaleproperty">VisualElement.ScaleProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scalexproperty">VisualElement.ScaleXProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scaleyproperty">VisualElement.ScaleYProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.clipproperty">VisualElement.ClipProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.visualproperty">VisualElement.VisualProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isvisibleproperty">VisualElement.IsVisibleProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.opacityproperty">VisualElement.OpacityProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.backgroundcolorproperty">VisualElement.BackgroundColorProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.backgroundproperty">VisualElement.BackgroundProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.behaviorsproperty">VisualElement.BehaviorsProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.triggersproperty">VisualElement.TriggersProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.widthrequestproperty">VisualElement.WidthRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.heightrequestproperty">VisualElement.HeightRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.minimumwidthrequestproperty">VisualElement.MinimumWidthRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.minimumheightrequestproperty">VisualElement.MinimumHeightRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.maximumwidthrequestproperty">VisualElement.MaximumWidthRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.maximumheightrequestproperty">VisualElement.MaximumHeightRequestProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isfocusedproperty">VisualElement.IsFocusedProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.flowdirectionproperty">VisualElement.FlowDirectionProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.windowproperty">VisualElement.WindowProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.shadowproperty">VisualElement.ShadowProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.zindexproperty">VisualElement.ZIndexProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.batchbegin">VisualElement.BatchBegin()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.batchcommit">VisualElement.BatchCommit()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.focus">VisualElement.Focus()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.measure#microsoft-maui-controls-visualelement-measure(system-double-system-double)">VisualElement.Measure(double, double)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.measure#microsoft-maui-controls-visualelement-measure(system-double-system-double-microsoft-maui-controls-measureflags)">VisualElement.Measure(double, double, MeasureFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.unfocus">VisualElement.Unfocus()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.arrange">VisualElement.Arrange(Rect)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.layout">VisualElement.Layout(Rect)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.mapbackgroundcolor">VisualElement.MapBackgroundColor(IViewHandler, IView)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.mapbackgroundimagesource">VisualElement.MapBackgroundImageSource(IViewHandler, IView)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.visual">VisualElement.Visual</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.flowdirection">VisualElement.FlowDirection</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.window">VisualElement.Window</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.anchorx">VisualElement.AnchorX</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.anchory">VisualElement.AnchorY</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.backgroundcolor">VisualElement.BackgroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.background">VisualElement.Background</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.behaviors">VisualElement.Behaviors</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.bounds">VisualElement.Bounds</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.height">VisualElement.Height</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.heightrequest">VisualElement.HeightRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.inputtransparent">VisualElement.InputTransparent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isenabled">VisualElement.IsEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isfocused">VisualElement.IsFocused</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isvisible">VisualElement.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.minimumheightrequest">VisualElement.MinimumHeightRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.minimumwidthrequest">VisualElement.MinimumWidthRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.maximumheightrequest">VisualElement.MaximumHeightRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.maximumwidthrequest">VisualElement.MaximumWidthRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.opacity">VisualElement.Opacity</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotation">VisualElement.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotationx">VisualElement.RotationX</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.rotationy">VisualElement.RotationY</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scale">VisualElement.Scale</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scalex">VisualElement.ScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.scaley">VisualElement.ScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.translationx">VisualElement.TranslationX</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.translationy">VisualElement.TranslationY</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.triggers">VisualElement.Triggers</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.width">VisualElement.Width</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.widthrequest">VisualElement.WidthRequest</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.x">VisualElement.X</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.y">VisualElement.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.clip">VisualElement.Clip</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.resources">VisualElement.Resources</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.frame">VisualElement.Frame</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.handler">VisualElement.Handler</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.shadow">VisualElement.Shadow</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.zindex">VisualElement.ZIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.desiredsize">VisualElement.DesiredSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.isloaded">VisualElement.IsLoaded</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.childrenreordered">VisualElement.ChildrenReordered</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.focused">VisualElement.Focused</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.measureinvalidated">VisualElement.MeasureInvalidated</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.sizechanged">VisualElement.SizeChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.unfocused">VisualElement.Unfocused</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.loaded">VisualElement.Loaded</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.visualelement.unloaded">VisualElement.Unloaded</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.navigableelement.navigation">NavigableElement.Navigation</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.styleableelement.style">StyleableElement.Style</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.styleableelement.styleclass">StyleableElement.StyleClass</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.styleableelement.class">StyleableElement.class</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.automationidproperty">Element.AutomationIdProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.classidproperty">Element.ClassIdProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.insertlogicalchild">Element.InsertLogicalChild(int, Element)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.addlogicalchild">Element.AddLogicalChild(Element)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.removelogicalchild">Element.RemoveLogicalChild(Element)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.clearlogicalchildren">Element.ClearLogicalChildren()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.findbyname">Element.FindByName(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.removedynamicresource">Element.RemoveDynamicResource(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.setdynamicresource">Element.SetDynamicResource(BindableProperty, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.mapautomationpropertiesisinaccessibletree">Element.MapAutomationPropertiesIsInAccessibleTree(IElementHandler, Element)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.mapautomationpropertiesexcludedwithchildren">Element.MapAutomationPropertiesExcludedWithChildren(IElementHandler, Element)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.automationid">Element.AutomationId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.classid">Element.ClassId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.effects">Element.Effects</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.id">Element.Id</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.styleid">Element.StyleId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.parent">Element.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.childadded">Element.ChildAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.childremoved">Element.ChildRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.descendantadded">Element.DescendantAdded</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.descendantremoved">Element.DescendantRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.parentchanging">Element.ParentChanging</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.parentchanged">Element.ParentChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.handlerchanging">Element.HandlerChanging</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.handlerchanged">Element.HandlerChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.bindingcontextproperty">BindableObject.BindingContextProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.clearvalue#microsoft-maui-controls-bindableobject-clearvalue(microsoft-maui-controls-bindableproperty)">BindableObject.ClearValue(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.clearvalue#microsoft-maui-controls-bindableobject-clearvalue(microsoft-maui-controls-bindablepropertykey)">BindableObject.ClearValue(BindablePropertyKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.getvalue">BindableObject.GetValue(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.isset">BindableObject.IsSet(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.removebinding">BindableObject.RemoveBinding(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.setbinding">BindableObject.SetBinding(BindableProperty, BindingBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.setvalue#microsoft-maui-controls-bindableobject-setvalue(microsoft-maui-controls-bindableproperty-system-object)">BindableObject.SetValue(BindableProperty, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.setvalue#microsoft-maui-controls-bindableobject-setvalue(microsoft-maui-controls-bindablepropertykey-system-object)">BindableObject.SetValue(BindablePropertyKey, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.coercevalue#microsoft-maui-controls-bindableobject-coercevalue(microsoft-maui-controls-bindableproperty)">BindableObject.CoerceValue(BindableProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.coercevalue#microsoft-maui-controls-bindableobject-coercevalue(microsoft-maui-controls-bindablepropertykey)">BindableObject.CoerceValue(BindablePropertyKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.dispatcher">BindableObject.Dispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.bindingcontext">BindableObject.BindingContext</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.propertychanged">BindableObject.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.propertychanging">BindableObject.PropertyChanging</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableobject.bindingcontextchanged">BindableObject.BindingContextChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnView__ctor_" data-uid="PageCurl.Maui.PageTurnView.#ctor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView__ctor" data-uid="PageCurl.Maui.PageTurnView.#ctor">
+  PageTurnView()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnView()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView__ctor_" data-uid="PageCurl.Maui.PageTurnView.#ctor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView__ctor_PageCurl_Core_PageCurlOptions_" data-uid="PageCurl.Maui.PageTurnView.#ctor(PageCurl.Core.PageCurlOptions)">
+  PageTurnView(PageCurlOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnView(PageCurlOptions options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="PageCurl.Core.PageCurlOptions.html">PageCurlOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_BackImageProperty" data-uid="PageCurl.Maui.PageTurnView.BackImageProperty">
+  BackImageProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty BackImageProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideColorProperty" data-uid="PageCurl.Maui.PageTurnView.BacksideColorProperty">
+  BacksideColorProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty BacksideColorProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideDimFactorProperty" data-uid="PageCurl.Maui.PageTurnView.BacksideDimFactorProperty">
+  BacksideDimFactorProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty BacksideDimFactorProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideModeProperty" data-uid="PageCurl.Maui.PageTurnView.BacksideModeProperty">
+  BacksideModeProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty BacksideModeProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_ContentScaleProperty" data-uid="PageCurl.Maui.PageTurnView.ContentScaleProperty">
+  ContentScaleProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ContentScaleProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_FlickEnabledProperty" data-uid="PageCurl.Maui.PageTurnView.FlickEnabledProperty">
+  FlickEnabledProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FlickEnabledProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_FlickVelocityThresholdProperty" data-uid="PageCurl.Maui.PageTurnView.FlickVelocityThresholdProperty">
+  FlickVelocityThresholdProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FlickVelocityThresholdProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_FrontImageProperty" data-uid="PageCurl.Maui.PageTurnView.FrontImageProperty">
+  FrontImageProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FrontImageProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_LockedAnchorProperty" data-uid="PageCurl.Maui.PageTurnView.LockedAnchorProperty">
+  LockedAnchorProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty LockedAnchorProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_LockedEdgeProperty" data-uid="PageCurl.Maui.PageTurnView.LockedEdgeProperty">
+  LockedEdgeProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty LockedEdgeProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageAspectRatioProperty" data-uid="PageCurl.Maui.PageTurnView.PageAspectRatioProperty">
+  PageAspectRatioProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PageAspectRatioProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageChangeThresholdProperty" data-uid="PageCurl.Maui.PageTurnView.PageChangeThresholdProperty">
+  PageChangeThresholdProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PageChangeThresholdProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageHorizontalPlacementProperty" data-uid="PageCurl.Maui.PageTurnView.PageHorizontalPlacementProperty">
+  PageHorizontalPlacementProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PageHorizontalPlacementProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PreviousPageImageProperty" data-uid="PageCurl.Maui.PageTurnView.PreviousPageImageProperty">
+  PreviousPageImageProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional page revealed while the user turns backward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PreviousPageImageProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_ReduceMotionProperty" data-uid="PageCurl.Maui.PageTurnView.ReduceMotionProperty">
+  ReduceMotionProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ReduceMotionProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_SurfaceColorProperty" data-uid="PageCurl.Maui.PageTurnView.SurfaceColorProperty">
+  SurfaceColorProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty SurfaceColorProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_UnderPageImageProperty" data-uid="PageCurl.Maui.PageTurnView.UnderPageImageProperty">
+  UnderPageImageProperty
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty UnderPageImageProperty</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.bindableproperty">BindableProperty</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnView_BackImage_" data-uid="PageCurl.Maui.PageTurnView.BackImage*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_BackImage" data-uid="PageCurl.Maui.PageTurnView.BackImage">
+  BackImage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SKImage? BackImage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skimage">SKImage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_BacksideColor_" data-uid="PageCurl.Maui.PageTurnView.BacksideColor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideColor" data-uid="PageCurl.Maui.PageTurnView.BacksideColor">
+  BacksideColor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color BacksideColor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.graphics.color">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_BacksideDimFactor_" data-uid="PageCurl.Maui.PageTurnView.BacksideDimFactor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideDimFactor" data-uid="PageCurl.Maui.PageTurnView.BacksideDimFactor">
+  BacksideDimFactor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float BacksideDimFactor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_BacksideMode_" data-uid="PageCurl.Maui.PageTurnView.BacksideMode*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_BacksideMode" data-uid="PageCurl.Maui.PageTurnView.BacksideMode">
+  BacksideMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageBacksideMode BacksideMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageBacksideMode.html">PageBacksideMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_ContentScale_" data-uid="PageCurl.Maui.PageTurnView.ContentScale*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_ContentScale" data-uid="PageCurl.Maui.PageTurnView.ContentScale">
+  ContentScale
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Controls whether page images fill or preserve their aspect ratio.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageContentScale ContentScale { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Maui.PageContentScale.html">PageContentScale</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_Controller_" data-uid="PageCurl.Maui.PageTurnView.Controller*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_Controller" data-uid="PageCurl.Maui.PageTurnView.Controller">
+  Controller
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnController Controller { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageTurnController.html">PageTurnController</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_FlickEnabled_" data-uid="PageCurl.Maui.PageTurnView.FlickEnabled*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_FlickEnabled" data-uid="PageCurl.Maui.PageTurnView.FlickEnabled">
+  FlickEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FlickEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_FlickVelocityThreshold_" data-uid="PageCurl.Maui.PageTurnView.FlickVelocityThreshold*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_FlickVelocityThreshold" data-uid="PageCurl.Maui.PageTurnView.FlickVelocityThreshold">
+  FlickVelocityThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float FlickVelocityThreshold { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_FrontImage_" data-uid="PageCurl.Maui.PageTurnView.FrontImage*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_FrontImage" data-uid="PageCurl.Maui.PageTurnView.FrontImage">
+  FrontImage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SKImage? FrontImage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skimage">SKImage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_LastCanvasSize_" data-uid="PageCurl.Maui.PageTurnView.LastCanvasSize*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_LastCanvasSize" data-uid="PageCurl.Maui.PageTurnView.LastCanvasSize">
+  LastCanvasSize
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the pixel dimensions of the most recently painted surface. It is
+zero until the view has produced its first paint frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 LastCanvasSize { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_LastContentViewport_" data-uid="PageCurl.Maui.PageTurnView.LastContentViewport*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_LastContentViewport" data-uid="PageCurl.Maui.PageTurnView.LastContentViewport">
+  LastContentViewport
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the most recently painted page-content rectangle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageViewportRect LastContentViewport { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageViewportRect.html">PageViewportRect</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_LockedAnchor_" data-uid="PageCurl.Maui.PageTurnView.LockedAnchor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_LockedAnchor" data-uid="PageCurl.Maui.PageTurnView.LockedAnchor">
+  LockedAnchor
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Locks an edge or pins a corner for gestures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageAnchor LockedAnchor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageAnchor.html">PageAnchor</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_LockedEdge_" data-uid="PageCurl.Maui.PageTurnView.LockedEdge*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_LockedEdge" data-uid="PageCurl.Maui.PageTurnView.LockedEdge">
+  LockedEdge
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Locks a physical edge as the stationary hinge for gestures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageEdge LockedEdge { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageEdge.html">PageEdge</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_Options_" data-uid="PageCurl.Maui.PageTurnView.Options*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_Options" data-uid="PageCurl.Maui.PageTurnView.Options">
+  Options
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageCurlOptions Options { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageCurlOptions.html">PageCurlOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PageAspectRatio_" data-uid="PageCurl.Maui.PageTurnView.PageAspectRatio*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageAspectRatio" data-uid="PageCurl.Maui.PageTurnView.PageAspectRatio">
+  PageAspectRatio
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Page width divided by height. Zero uses image dimensions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PageAspectRatio { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PageChangeThreshold_" data-uid="PageCurl.Maui.PageTurnView.PageChangeThreshold*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageChangeThreshold" data-uid="PageCurl.Maui.PageTurnView.PageChangeThreshold">
+  PageChangeThreshold
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Normalized page travel required to make release commit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PageChangeThreshold { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PageHorizontalPlacement_" data-uid="PageCurl.Maui.PageTurnView.PageHorizontalPlacement*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageHorizontalPlacement" data-uid="PageCurl.Maui.PageTurnView.PageHorizontalPlacement">
+  PageHorizontalPlacement
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageHorizontalPlacement PageHorizontalPlacement { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Core.PageHorizontalPlacement.html">PageHorizontalPlacement</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PerformanceDiagnosticsEnabled_" data-uid="PageCurl.Maui.PageTurnView.PerformanceDiagnosticsEnabled*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PerformanceDiagnosticsEnabled" data-uid="PageCurl.Maui.PageTurnView.PerformanceDiagnosticsEnabled">
+  PerformanceDiagnosticsEnabled
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PerformanceDiagnosticsEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PerformanceSnapshot_" data-uid="PageCurl.Maui.PageTurnView.PerformanceSnapshot*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PerformanceSnapshot" data-uid="PageCurl.Maui.PageTurnView.PerformanceSnapshot">
+  PerformanceSnapshot
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageTurnPerformanceSnapshot PerformanceSnapshot { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="PageCurl.Maui.PageTurnPerformanceSnapshot.html">PageTurnPerformanceSnapshot</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_PreviousPageImage_" data-uid="PageCurl.Maui.PageTurnView.PreviousPageImage*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_PreviousPageImage" data-uid="PageCurl.Maui.PageTurnView.PreviousPageImage">
+  PreviousPageImage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SKImage? PreviousPageImage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skimage">SKImage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_ReduceMotion_" data-uid="PageCurl.Maui.PageTurnView.ReduceMotion*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_ReduceMotion" data-uid="PageCurl.Maui.PageTurnView.ReduceMotion">
+  ReduceMotion
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ReduceMotion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_SurfaceColor_" data-uid="PageCurl.Maui.PageTurnView.SurfaceColor*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_SurfaceColor" data-uid="PageCurl.Maui.PageTurnView.SurfaceColor">
+  SurfaceColor
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color SurfaceColor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.graphics.color">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_UnderPageImage_" data-uid="PageCurl.Maui.PageTurnView.UnderPageImage*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_UnderPageImage" data-uid="PageCurl.Maui.PageTurnView.UnderPageImage">
+  UnderPageImage
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SKImage? UnderPageImage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/skiasharp.skimage">SKImage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="PageCurl_Maui_PageTurnView_CancelInteraction_" data-uid="PageCurl.Maui.PageTurnView.CancelInteraction*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_CancelInteraction" data-uid="PageCurl.Maui.PageTurnView.CancelInteraction">
+  CancelInteraction()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CancelInteraction()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_OnHandlerChanged_" data-uid="PageCurl.Maui.PageTurnView.OnHandlerChanged*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_OnHandlerChanged" data-uid="PageCurl.Maui.PageTurnView.OnHandlerChanged">
+  OnHandlerChanged()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>When overridden in a derived class, should raise the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.handlerchanged">HandlerChanged</a> event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnHandlerChanged()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="PageCurl_Maui_PageTurnView_OnHandlerChanged_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>It is the implementor's responsibility to raise the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.maui.controls.element.handlerchanged">HandlerChanged</a> event.</p>
+</div>
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_ResetPerformanceSnapshot_" data-uid="PageCurl.Maui.PageTurnView.ResetPerformanceSnapshot*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_ResetPerformanceSnapshot" data-uid="PageCurl.Maui.PageTurnView.ResetPerformanceSnapshot">
+  ResetPerformanceSnapshot()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetPerformanceSnapshot()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="PageCurl_Maui_PageTurnView_TryTurn_" data-uid="PageCurl.Maui.PageTurnView.TryTurn*"></a>
+
+  <h3 id="PageCurl_Maui_PageTurnView_TryTurn_PageCurl_Core_PageTurnDirection_" data-uid="PageCurl.Maui.PageTurnView.TryTurn(PageCurl.Core.PageTurnDirection)">
+  TryTurn(PageTurnDirection)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryTurn(PageTurnDirection direction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="PageCurl.Core.PageTurnDirection.html">PageTurnDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageChangeThresholdCrossed" data-uid="PageCurl.Maui.PageTurnView.PageChangeThresholdCrossed">
+  PageChangeThresholdCrossed
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;PageChangeThresholdCrossedEventArgs&gt;? PageChangeThresholdCrossed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://github.com/mariusmuntean/PageCurl/blob/fcce5087113e30b7e668a61919a4e73af0c3101b/src/PageCurl.Core/PageTurnTypes.cs">PageChangeThresholdCrossedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="PageCurl_Maui_PageTurnView_PageTurnCompleted" data-uid="PageCurl.Maui.PageTurnView.PageTurnCompleted">
+  PageTurnCompleted
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;PageTurnCompletedEventArgs&gt;? PageTurnCompleted</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://github.com/mariusmuntean/PageCurl/blob/fcce5087113e30b7e668a61919a4e73af0c3101b/src/PageCurl.Core/PageTurnTypes.cs">PageTurnCompletedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          PageCurl.Maui · MIT license
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
