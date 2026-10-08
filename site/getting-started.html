@@ -76,10 +76,13 @@
 <p>You need a .NET 10 MAUI application and the workload for your target platform.
 The repository pins the SDK and workload set in <code>global.json</code>.</p>
 <h2 id="reference-the-library">Reference the library</h2>
-<p>The source repository currently requires access. Until a published package is verified, add a project reference to
-<code>src/PageCurl.Maui/PageCurl.Maui.csproj</code> from the cloned repository. You can also
-pack the projects into a local NuGet feed. The MAUI package depends on Core;
-your application does not need a separate Core reference.</p>
+<p>The source repository currently requires access. From your application's
+directory, add a reference to your local checkout:</p>
+<pre><code class="lang-bash">dotnet add ReaderApp.csproj reference ../PageCurl/src/PageCurl.Maui/PageCurl.Maui.csproj
+</code></pre>
+<p>Replace the project names and relative path with yours. The MAUI project
+references Core, so your application needs only the MAUI reference. You can
+also consume locally packed packages; NuGet.org consumption remains unverified.</p>
 <h2 id="register-skiasharp">Register SkiaSharp</h2>
 <p>Add the handler registration in <code>MauiProgram.cs</code>:</p>
 <pre><code class="lang-csharp">using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -88,39 +91,162 @@ var builder = MauiApp.CreateBuilder();
 builder.UseMauiApp&lt;App&gt;().UseSkiaSharp();
 </code></pre>
 <h2 id="display-a-live-page">Display a live page</h2>
-<p>Add the namespace and control to a XAML page:</p>
+<p>Add the namespace, control and navigation buttons to <code>MainPage.xaml</code>. This
+example uses an application namespace of <code>ReaderApp</code>:</p>
 <pre><code class="lang-xml">&lt;ContentPage
     xmlns=&quot;http://schemas.microsoft.com/dotnet/2021/maui&quot;
     xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
-    xmlns:curl=&quot;clr-namespace:PageCurl.Maui;assembly=PageCurl.Maui&quot;&gt;
-    &lt;curl:PageCurlView x:Name=&quot;Reader&quot; PageAspectRatio=&quot;0.75&quot;&gt;
-        &lt;curl:PageCurlView.FrontContent&gt;
-            &lt;Grid BackgroundColor=&quot;#FAF8F1&quot; Padding=&quot;24&quot;&gt;
-                &lt;Label Text=&quot;First page&quot; TextColor=&quot;#1C211F&quot; /&gt;
-            &lt;/Grid&gt;
-        &lt;/curl:PageCurlView.FrontContent&gt;
-    &lt;/curl:PageCurlView&gt;
+    xmlns:curl=&quot;clr-namespace:PageCurl.Maui;assembly=PageCurl.Maui&quot;
+    x:Class=&quot;ReaderApp.MainPage&quot;&gt;
+    &lt;Grid RowDefinitions=&quot;*,Auto,Auto&quot; Padding=&quot;16&quot; RowSpacing=&quot;12&quot;&gt;
+        &lt;curl:PageCurlView x:Name=&quot;Reader&quot; PageAspectRatio=&quot;0.75&quot; /&gt;
+        &lt;HorizontalStackLayout Grid.Row=&quot;1&quot; Spacing=&quot;12&quot;
+                               HorizontalOptions=&quot;Center&quot;&gt;
+            &lt;Button x:Name=&quot;PreviousButton&quot; Text=&quot;Previous&quot; /&gt;
+            &lt;Button x:Name=&quot;NextButton&quot; Text=&quot;Next&quot; /&gt;
+        &lt;/HorizontalStackLayout&gt;
+        &lt;VerticalStackLayout x:Name=&quot;CaptureError&quot; Grid.Row=&quot;2&quot;
+                             IsVisible=&quot;False&quot; Spacing=&quot;6&quot;&gt;
+            &lt;Label Text=&quot;Page capture failed.&quot; HorizontalTextAlignment=&quot;Center&quot; /&gt;
+            &lt;Button x:Name=&quot;RetryButton&quot; Text=&quot;Retry capture&quot; /&gt;
+        &lt;/VerticalStackLayout&gt;
+    &lt;/Grid&gt;
 &lt;/ContentPage&gt;
 </code></pre>
 <p>The view stays interactive while flat. The control captures it after layout
 and uses that image during the turn. Give the control a nonzero layout size.</p>
 <h2 id="connect-navigation">Connect navigation</h2>
-<p>Maintain the current index in your application. Change it only after a committed
-completion; cancelled turns leave it unchanged.</p>
-<pre><code class="lang-csharp">using PageCurl.Core;
+<p>Use <code>PageNavigationState</code> for the page index and first/last boundaries. In
+<code>MainPage.xaml.cs</code>, update the content only after a committed completion:</p>
+<pre><code class="lang-csharp">using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using PageCurl.Core;
 
-Reader.PageTurnCompleted += (_, e) =&gt;
+namespace ReaderApp;
+
+public partial class MainPage : ContentPage
 {
-    if (!e.Committed) return;
-    pageIndex += e.Direction == PageTurnDirection.Forward ? 1 : -1;
-    Reader.FrontContent = CreatePage(pageIndex);
-};
+    private readonly PageNavigationState _navigation = new(pageCount: 3);
+    private Window? _observedWindow;
+    private bool _active;
+
+    public MainPage()
+    {
+        InitializeComponent();
+        Reader.PageTurnCompleted += (_, e) =&gt;
+        {
+            if (_active &amp;&amp; e.Committed &amp;&amp; _navigation.TryCommit(e.Direction)) ShowPage();
+        };
+        PreviousButton.Clicked += (_, _) =&gt;
+        {
+            if (_active &amp;&amp; _navigation.CanTurnBackward) Reader.TryTurn(PageTurnDirection.Backward);
+        };
+        NextButton.Clicked += (_, _) =&gt;
+        {
+            if (_active &amp;&amp; _navigation.CanTurnForward) Reader.TryTurn(PageTurnDirection.Forward);
+        };
+        Reader.SnapshotFailed += (_, _) =&gt;
+        {
+            if (_active) CaptureError.IsVisible = true;
+        };
+        RetryButton.Clicked += OnRetryClicked;
+        ShowPage();
+    }
+
+    private void ShowPage()
+    {
+        Reader.FrontContent = new Grid
+        {
+            BackgroundColor = Color.FromArgb(&quot;#FAF8F1&quot;),
+            Padding = new Thickness(24),
+            Children =
+            {
+                new Label
+                {
+                    Text = $&quot;Page {_navigation.PageIndex + 1} of {_navigation.PageCount}&quot;,
+                    TextColor = Color.FromArgb(&quot;#1C211F&quot;),
+                },
+            },
+        };
+        CaptureError.IsVisible = false;
+        UpdateButtons();
+    }
+
+    private void UpdateButtons()
+    {
+        PreviousButton.IsEnabled = _active &amp;&amp; _navigation.CanTurnBackward;
+        NextButton.IsEnabled = _active &amp;&amp; _navigation.CanTurnForward;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        ObserveWindow(Window);
+        SetActive(true);
+    }
+
+    protected override void OnDisappearing()
+    {
+        ObserveWindow(null);
+        SetActive(false);
+        base.OnDisappearing();
+    }
+
+    private void ObserveWindow(Window? window)
+    {
+        if (_observedWindow is not null)
+        {
+            _observedWindow.Stopped -= OnWindowStopped;
+            _observedWindow.Resumed -= OnWindowResumed;
+        }
+        _observedWindow = window;
+        if (window is not null)
+        {
+            window.Stopped += OnWindowStopped;
+            window.Resumed += OnWindowResumed;
+        }
+    }
+
+    private void OnWindowStopped(object? sender, EventArgs e) =&gt; SetActive(false);
+    private void OnWindowResumed(object? sender, EventArgs e) =&gt; SetActive(true);
+
+    private void SetActive(bool active)
+    {
+        _active = active;
+        if (!active) Reader.CancelInteraction();
+        Reader.IsVisible = active;
+        if (active) CaptureError.IsVisible = false;
+        UpdateButtons();
+    }
+
+    private async void OnRetryClicked(object? sender, EventArgs e)
+    {
+        if (!_active || !RetryButton.IsEnabled) return;
+        RetryButton.IsEnabled = false;
+        CaptureError.IsVisible = false;
+        try { await Reader.RefreshSnapshotAsync(); }
+        catch (OperationCanceledException) { }
+        finally { RetryButton.IsEnabled = true; }
+    }
+}
 </code></pre>
-<p>Use <code>PageNavigationState</code> to enforce first/last boundaries and connect labeled
-Previous/Next buttons through <code>TryTurn</code>. See the sample for complete wiring,
-including readiness and scene changes. Do not start another turn while required
-snapshots are unavailable.</p>
-<p>Read <a href="content.html">images and live content</a> for backside and refresh behavior.</p>
+<p>Gestures and buttons reach the same completion handler. <code>TryCommit</code> keeps the
+model in range, including a gesture at either endpoint. <code>TryTurn</code> returns
+<code>false</code> when the control cannot start a command; leave the model unchanged.
+Buttons reflect page boundaries; a current snapshot must also be available
+before a turn starts. Automatic capture follows layout. <code>SnapshotFailed</code> shows
+the retry control, and retry awaits capture without changing navigation.</p>
+<p>The active flag prevents completion callbacks from changing an inactive page.
+Stopping or leaving the page cancels the turn before hiding the control;
+showing it again requests a fresh capture. Leaving also detaches window events.</p>
+<p>This example replaces the live page after completion. To reveal destination
+images beneath it during a turn, supply <code>UnderPageImage</code> for forward turns and
+<code>PreviousPageImage</code> for backward turns. You own those <code>SKImage</code> values: keep
+them alive while assigned, then cancel interaction and clear the image
+properties before disposal. Use <a href="spreads.html">two-page spreads</a> when the control
+should capture live neighboring pages.</p>
+<p>Read <a href="content.html">images and live content</a> for backside and in-place refresh
+behavior, and <a href="runtime.html">runtime rules</a> for UI-thread and lifecycle details.</p>
 
 </article>
 

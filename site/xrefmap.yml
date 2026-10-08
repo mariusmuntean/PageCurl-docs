@@ -3622,6 +3622,21 @@ references:
   commentId: Overload:PageCurl.Maui.PageTurnView.OnHandlerChanged
   fullName: PageCurl.Maui.PageTurnView.OnHandlerChanged
   nameWithType: PageTurnView.OnHandlerChanged
+- uid: PageCurl.Maui.PageTurnView.OnPropertyChanged(System.String)
+  name: OnPropertyChanged(string?)
+  href: api/PageCurl.Maui.PageTurnView.html#PageCurl_Maui_PageTurnView_OnPropertyChanged_System_String_
+  commentId: M:PageCurl.Maui.PageTurnView.OnPropertyChanged(System.String)
+  name.vb: OnPropertyChanged(String)
+  fullName: PageCurl.Maui.PageTurnView.OnPropertyChanged(string?)
+  fullName.vb: PageCurl.Maui.PageTurnView.OnPropertyChanged(String)
+  nameWithType: PageTurnView.OnPropertyChanged(string?)
+  nameWithType.vb: PageTurnView.OnPropertyChanged(String)
+- uid: PageCurl.Maui.PageTurnView.OnPropertyChanged*
+  name: OnPropertyChanged
+  href: api/PageCurl.Maui.PageTurnView.html#PageCurl_Maui_PageTurnView_OnPropertyChanged_
+  commentId: Overload:PageCurl.Maui.PageTurnView.OnPropertyChanged
+  fullName: PageCurl.Maui.PageTurnView.OnPropertyChanged
+  nameWithType: PageTurnView.OnPropertyChanged
 - uid: PageCurl.Maui.PageTurnView.Options
   name: Options
   href: api/PageCurl.Maui.PageTurnView.html#PageCurl_Maui_PageTurnView_Options

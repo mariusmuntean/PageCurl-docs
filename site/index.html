@@ -76,6 +76,14 @@
 <p>PageCurl.Maui adds page turns to .NET MAUI applications. Use it for images,
 live views or a two-page reader. Pages curl from an edge or pinned corner;
 buttons and gestures share the same completion event.</p>
+<h2 id="motion-preview">Motion preview</h2>
+<video controls preload="none" playsinline width="1280" style="max-width:100%;height:auto" poster="images/pagecurl-preview.jpg" aria-label="PageCurl native demo: drag and snap-back, a spread turn, live content and a scene switch">
+  <source src="images/pagecurl-preview.mp4" type="video/mp4">
+  <a href="images/pagecurl-preview.mp4">Watch the PageCurl native demo.</a>
+</video>
+<p>The 20-second Mac Catalyst recording shows a committed drag and snap-back,
+a spread turn, a live counter update, and switching scenes during a turn.
+Playback runs at normal speed. <a href="images/pagecurl-preview.mp4">Download the preview</a>.</p>
 <h2 id="choose-a-control">Choose a control</h2>
 <table>
 <thead>
@@ -104,15 +112,19 @@ buttons and gestures share the same completion event.</p>
 </tbody>
 </table>
 <p>Start with the <a href="getting-started.html">quick start</a>, then read the
-<a href="runtime.html">runtime rules</a> before connecting a page model.</p>
+<a href="runtime.html">runtime rules</a> before connecting a page model.
+The <a href="spreads.html#small-reader-example">small reader example</a> supplies a complete
+five-page recipe with navigation, capture retry and the odd last page.</p>
 <h2 id="current-release-status">Current release status</h2>
-<p>The 0.1.0 line targets .NET 10 and MAUI 10. Public APIs may change before 1.0.
+<p>Package metadata currently uses 0.1.0 and targets .NET 10 and MAUI 10.
+Public APIs may change before 1.0.
 Use the <a href="platforms.html">platform matrix</a> to distinguish build coverage from
 runtime and hardware validation. Packages have a local consumption test;
 this guide does not assume that a package has been published on NuGet.org.</p>
 <p>The sample includes Single, Spread, Content and Backside scenes, a live counter,
 local video, anchor choices, reduced motion and page-turn commands.</p>
-<p>The source repository currently requires access.
+<p>The source repository and its issue tracker currently require access. See
+<a href="contributing.html">contributing and validation</a> if you have repository access.
 <a href="https://github.com/mariusmuntean/PageCurl-docs/blob/main/LICENSE">MIT license</a></p>
 
 </article>

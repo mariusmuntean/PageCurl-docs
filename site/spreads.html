@@ -85,6 +85,8 @@ pages before enabling navigation.</p>
     NextLeftContent=&quot;{Binding NextLeftPage}&quot;
     NextRightContent=&quot;{Binding NextRightPage}&quot; /&gt;
 </code></pre>
+<p>Give each occupied slot its own MAUI view instance. Multiple views can display
+the same page data.</p>
 <h2 id="sheet-mapping">Sheet mapping</h2>
 <table>
 <thead>
@@ -110,17 +112,261 @@ pages before enabling navigation.</p>
 </tr>
 </tbody>
 </table>
-<p>The back is the adjacent page the sheet lands on. If you omit it, the control
-uses the selected mirrored or solid-color fallback.</p>
+<p>The back is the adjacent page the sheet lands on. If you omit it or its current
+capture is unavailable, the control uses the selected mirrored or solid-color
+fallback. Required front and destination captures still determine readiness.</p>
 <h2 id="commands-and-boundaries">Commands and boundaries</h2>
 <p>Use <code>TryTurnForward()</code> and <code>TryTurnBackward()</code>. Enable buttons from
 <code>CanTurnForward</code> and <code>CanTurnBackward</code>; these include snapshot readiness.
 Use <code>PageSpreadNavigationState</code> to decide whether a neighboring spread exists.
 Update the six content slots from a committed <code>PageTurnCompleted</code> event.</p>
+<p>Set previous or next slots to <code>null</code> when no neighboring spread exists. For an
+odd page count, the final spread has only a left page. Prepare that forward turn
+with the final page in <code>NextLeftContent</code> and a blank view in <code>NextRightContent</code>;
+the turn needs an underneath destination even when that destination is blank.
+After committed completion, assign the final page to <code>LeftContent</code> and set
+<code>RightContent</code> to <code>null</code>.</p>
 <p>Replacing content schedules capture of dirty slots. Call
 <code>RefreshSnapshotAsync()</code> for in-place edits. Explicit requests during a turn
 wait until it ends and preserve cancellation. See <a href="runtime.html">runtime rules</a>
 for the UI-thread and lifecycle contract.</p>
+<h2 id="small-reader-example">Small reader example</h2>
+<p>This complete five-page recipe keeps navigation in one place and uses no page
+images or demo infrastructure. Follow the <a href="getting-started.html">quick start</a> to
+reference the library and register SkiaSharp. Add these two files to your MAUI
+application, using your application's namespace in both <code>x:Class</code> and code.
+To open it, return <code>new Window(new ReaderPage())</code> from your app's <code>CreateWindow</code>.</p>
+<p><code>ReaderPage.xaml</code>:</p>
+<pre><code class="lang-xml">&lt;ContentPage
+    xmlns=&quot;http://schemas.microsoft.com/dotnet/2021/maui&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+    xmlns:curl=&quot;clr-namespace:PageCurl.Maui;assembly=PageCurl.Maui&quot;
+    x:Class=&quot;ReaderApp.ReaderPage&quot; Title=&quot;Small reader&quot; BackgroundColor=&quot;#E8E5DC&quot;&gt;
+    &lt;Grid Padding=&quot;16&quot; RowDefinitions=&quot;Auto,*,Auto,Auto&quot; RowSpacing=&quot;12&quot;&gt;
+        &lt;Label x:Name=&quot;PageCounter&quot; FontSize=&quot;18&quot; TextColor=&quot;#1C211F&quot; HorizontalTextAlignment=&quot;Center&quot; /&gt;
+        &lt;curl:PageSpreadView x:Name=&quot;Book&quot; Grid.Row=&quot;1&quot; PageAspectRatio=&quot;0.75&quot; /&gt;
+        &lt;HorizontalStackLayout Grid.Row=&quot;2&quot; Spacing=&quot;12&quot; HorizontalOptions=&quot;Center&quot;&gt;
+            &lt;Button x:Name=&quot;PreviousButton&quot; Text=&quot;Previous&quot; IsEnabled=&quot;False&quot; MinimumHeightRequest=&quot;44&quot; MinimumWidthRequest=&quot;96&quot; /&gt;
+            &lt;Button x:Name=&quot;NextButton&quot; Text=&quot;Next&quot; IsEnabled=&quot;False&quot; MinimumHeightRequest=&quot;44&quot; MinimumWidthRequest=&quot;96&quot; /&gt;
+        &lt;/HorizontalStackLayout&gt;
+        &lt;VerticalStackLayout x:Name=&quot;CaptureError&quot; Grid.Row=&quot;3&quot; IsVisible=&quot;False&quot; Spacing=&quot;6&quot;&gt;
+            &lt;Label Text=&quot;Page capture failed.&quot; TextColor=&quot;#1C211F&quot; HorizontalTextAlignment=&quot;Center&quot; /&gt;
+            &lt;Button x:Name=&quot;RetryButton&quot; Text=&quot;Retry capture&quot; /&gt;
+        &lt;/VerticalStackLayout&gt;
+    &lt;/Grid&gt;
+&lt;/ContentPage&gt;
+</code></pre>
+<p><code>ReaderPage.xaml.cs</code>:</p>
+<pre><code class="lang-csharp">using System.ComponentModel;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using PageCurl.Core;
+
+namespace ReaderApp;
+
+public partial class ReaderPage : ContentPage
+{
+    private static readonly (string Title, string Body)[] Pages =
+    [
+        (&quot;A small book&quot;, &quot;Drag a page edge, or use Next. Both finish through the same completion event.&quot;),
+        (&quot;Across the spine&quot;, &quot;The turning sheet lands on the opposite side. Its back is the adjacent page.&quot;),
+        (&quot;Live MAUI pages&quot;, &quot;Each slot has its own view. The control captures neighboring pages before turning.&quot;),
+        (&quot;Back and forth&quot;, &quot;Previous follows the same path as a backward gesture. Navigation stays in range.&quot;),
+        (&quot;The last page&quot;, &quot;An odd page count ends with one left page. You can still turn backward.&quot;),
+    ];
+    private readonly PageSpreadNavigationState _navigation = new(Pages.Length);
+    private Window? _observedWindow;
+    private CancellationTokenSource? _lifetime;
+    private bool _active;
+    private bool _scrollRefreshRunning;
+    private bool _scrollDirty;
+
+    public ReaderPage()
+    {
+        InitializeComponent();
+        Book.PageTurnCompleted += (_, e) =&gt;
+        {
+            if (_active &amp;&amp; e.Committed &amp;&amp; _navigation.TryCommit(e.Direction)) ShowSpread();
+        };
+        Book.PropertyChanged += OnBookChanged;
+        Book.SnapshotFailed += (_, _) =&gt;
+        {
+            if (_active) CaptureError.IsVisible = true;
+        };
+        PreviousButton.Clicked += (_, _) =&gt;
+        {
+            if (_active &amp;&amp; _navigation.CanTurnBackward) Book.TryTurnBackward();
+        };
+        NextButton.Clicked += (_, _) =&gt;
+        {
+            if (_active &amp;&amp; _navigation.CanTurnForward) Book.TryTurnForward();
+        };
+        RetryButton.Clicked += OnRetryClicked;
+        ShowSpread();
+    }
+
+    private void ShowSpread()
+    {
+        var left = _navigation.LeftPageIndex;
+        Book.LeftContent = CreatePage(left);
+        Book.RightContent = _navigation.RightPageIndex is { } right ? CreatePage(right) : null;
+        Book.PreviousLeftContent = _navigation.CanTurnBackward ? CreatePage(left - 2) : null;
+        Book.PreviousRightContent = _navigation.CanTurnBackward ? CreatePage(left - 1) : null;
+        Book.NextLeftContent = _navigation.CanTurnForward ? CreatePage(left + 2) : null;
+        // A blank view is needed under the incoming odd final page.
+        Book.NextRightContent = _navigation.CanTurnForward ? CreatePage(left + 3) : null;
+        PageCounter.Text = _navigation.RightPageIndex is { } last
+            ? $&quot;{left + 1}–{last + 1} / {_navigation.PageCount}&quot;
+            : $&quot;{left + 1} / {_navigation.PageCount}&quot;;
+        CaptureError.IsVisible = false;
+        UpdateButtons();
+    }
+
+    private Grid CreatePage(int index)
+    {
+        var page = new Grid
+        {
+            BackgroundColor = Color.FromArgb(&quot;#FAF8F1&quot;),
+            Padding = new Thickness(20),
+            RowDefinitions =
+            {
+                new RowDefinition(GridLength.Star),
+                new RowDefinition(GridLength.Auto),
+            },
+            RowSpacing = 16,
+        };
+        if (index &gt;= Pages.Length) return page;
+        var text = new VerticalStackLayout { Spacing = 16 };
+        text.Children.Add(new Label { Text = Pages[index].Title, FontSize = 26,
+            FontAttributes = FontAttributes.Bold, TextColor = Color.FromArgb(&quot;#1C211F&quot;) });
+        text.Children.Add(new Label { Text = Pages[index].Body, FontSize = 16,
+            TextColor = Color.FromArgb(&quot;#1C211F&quot;) });
+        var scroll = new ScrollView { Content = text };
+        var lastScrollY = 0d;
+        scroll.Scrolled += (_, e) =&gt;
+        {
+            if (e.ScrollY == lastScrollY) return;
+            lastScrollY = e.ScrollY;
+            OnTextScrolled(page);
+        };
+        page.Add(scroll, 0, 0);
+        page.Add(new Label { Text = $&quot;{index + 1}&quot;, HorizontalTextAlignment = TextAlignment.End,
+            TextColor = Color.FromArgb(&quot;#1C211F&quot;) }, 0, 1);
+        return page;
+    }
+
+    private async void OnTextScrolled(Grid page)
+    {
+        if (!_active || (page != Book.LeftContent &amp;&amp; page != Book.RightContent)) return;
+        _scrollDirty = true;
+        if (_scrollRefreshRunning) return;
+        var token = _lifetime!.Token;
+        _scrollRefreshRunning = true;
+        try
+        {
+            while (!token.IsCancellationRequested &amp;&amp; _scrollDirty)
+            {
+                _scrollDirty = false;
+                await Book.RefreshSnapshotAsync(token);
+            }
+        }
+        catch (OperationCanceledException) { }
+        finally
+        {
+            if (!token.IsCancellationRequested) _scrollRefreshRunning = false;
+        }
+    }
+
+    private void OnBookChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName is nameof(Book.CanTurnForward) or nameof(Book.CanTurnBackward)) UpdateButtons();
+    }
+
+    private void UpdateButtons()
+    {
+        PreviousButton.IsEnabled = _active &amp;&amp; _navigation.CanTurnBackward &amp;&amp; Book.CanTurnBackward;
+        NextButton.IsEnabled = _active &amp;&amp; _navigation.CanTurnForward &amp;&amp; Book.CanTurnForward;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        ObserveWindow(Window);
+        SetActive(true);
+    }
+
+    protected override void OnDisappearing()
+    {
+        SetActive(false);
+        ObserveWindow(null);
+        base.OnDisappearing();
+    }
+
+    private void ObserveWindow(Window? window)
+    {
+        if (_observedWindow is not null)
+        {
+            _observedWindow.Stopped -= OnWindowStopped;
+            _observedWindow.Resumed -= OnWindowResumed;
+        }
+        _observedWindow = window;
+        if (window is not null)
+        {
+            window.Stopped += OnWindowStopped;
+            window.Resumed += OnWindowResumed;
+        }
+    }
+
+    private void OnWindowStopped(object? sender, EventArgs e) =&gt; SetActive(false);
+    private void OnWindowResumed(object? sender, EventArgs e) =&gt; SetActive(true);
+
+    private void SetActive(bool active)
+    {
+        _active = active;
+        _lifetime?.Cancel();
+        _lifetime?.Dispose();
+        _lifetime = active ? new CancellationTokenSource() : null;
+        _scrollRefreshRunning = false;
+        _scrollDirty = false;
+        if (!active) Book.CancelInteraction();
+        Book.IsVisible = active;
+        RetryButton.IsEnabled = active;
+        UpdateButtons();
+    }
+
+    private async void OnRetryClicked(object? sender, EventArgs e)
+    {
+        if (!_active || !RetryButton.IsEnabled) return;
+        var token = _lifetime!.Token;
+        RetryButton.IsEnabled = false;
+        CaptureError.IsVisible = false;
+        try { await Book.RefreshSnapshotAsync(token); }
+        catch (OperationCanceledException) { }
+        finally
+        {
+            if (_active &amp;&amp; !token.IsCancellationRequested)
+            {
+                RetryButton.IsEnabled = true;
+                UpdateButtons();
+            }
+        }
+    }
+}
+</code></pre>
+<p>Only committed completion changes the spread index. Capture readiness disables
+commands while pages are being prepared or a turn is active; rapid repeated
+clicks cannot skip a spread. Failed capture shows Retry without changing the
+index. Retry awaits capture and disables its button until finished. Stopping or
+leaving cancels the active turn and retry wait; leaving detaches window events.
+An old retry cannot reset the controls of a later activation.</p>
+<p>Views are created only when changing spreads, with at most six occupied slots.
+The last forward destination contains page 5 and a blank right view; once that
+turn commits, the reader shows page 5 on the left and <code>null</code> on the right.
+The control owns its snapshots. The example needs no timers or per-frame work.
+Page text scrolls vertically when a narrow page or larger system font needs more
+space; the page number stays visible. Scroll changes coalesce snapshot refreshes
+so the turning sheet shows the latest visible text. Use the outer edge to turn
+the sheet.</p>
 
 </article>
 
