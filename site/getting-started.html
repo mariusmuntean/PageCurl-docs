@@ -77,14 +77,18 @@
 The repository pins the SDK and workload set in <code>global.json</code>.</p>
 <p>The complete example below, running on an iPhone simulator during a drag:</p>
 <img src="images/quick-start-curl-ios.png" alt="The complete quick-start sample on iPhone: Page 1 of 3 curling from the right edge, with the shaded backside and Previous/Next buttons visible." width="360" style="max-width:100%;height:auto;background:#fff">
-<h2 id="reference-the-library">Reference the library</h2>
-<p>The source repository currently requires access. From your application's
-directory, add a reference to your local checkout:</p>
+<h2 id="install-the-library">Install the library</h2>
+<p>NuGet publication is pending; use the source reference below until it finishes.
+The first package version will use this command from your MAUI application's directory:</p>
+<pre><code class="lang-bash">dotnet add package PageCurl.Maui --version 0.1.0
+</code></pre>
+<p>The package includes <code>PageCurl.Core</code> transitively. The 0.x API may change
+before 1.0.</p>
+<p>To develop against the <a href="https://github.com/mariusmuntean/PageCurl">source</a>, use a
+project reference to your local checkout instead:</p>
 <pre><code class="lang-bash">dotnet add ReaderApp.csproj reference ../PageCurl/src/PageCurl.Maui/PageCurl.Maui.csproj
 </code></pre>
-<p>Replace the project names and relative path with yours. The MAUI project
-references Core, so your application needs only the MAUI reference. You can
-also consume locally packed packages; NuGet.org consumption remains unverified.</p>
+<p>Replace the project names and relative path with yours.</p>
 <h2 id="register-skiasharp">Register SkiaSharp</h2>
 <p>Add the handler registration in <code>MauiProgram.cs</code>:</p>
 <pre><code class="lang-csharp">using SkiaSharp.Views.Maui.Controls.Hosting;
