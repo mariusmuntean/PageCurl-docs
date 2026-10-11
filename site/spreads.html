@@ -117,7 +117,10 @@ capture is unavailable, the control uses the selected mirrored or solid-color
 fallback. Required front and destination captures still determine readiness.</p>
 <h2 id="commands-and-boundaries">Commands and boundaries</h2>
 <p>Use <code>TryTurnForward()</code> and <code>TryTurnBackward()</code>. Enable buttons from
-<code>CanTurnForward</code> and <code>CanTurnBackward</code>; these include snapshot readiness.
+<code>CanTurnForward</code> and <code>CanTurnBackward</code>; these include visibility and snapshot
+readiness and remain false during a turn. A hidden spread rejects commands even
+if an explicit refresh has prepared its snapshots. Revealing it restores
+readiness; no extra explicit refresh is required.
 Use <code>PageSpreadNavigationState</code> to decide whether a neighboring spread exists.
 Update the six content slots from a committed <code>PageTurnCompleted</code> event.</p>
 <p>Set previous or next slots to <code>null</code> when no neighboring spread exists. For an

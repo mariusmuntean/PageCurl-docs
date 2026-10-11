@@ -2404,6 +2404,18 @@ references:
   commentId: Overload:PageCurl.Maui.PageCurlView.CancelInteraction
   fullName: PageCurl.Maui.PageCurlView.CancelInteraction
   nameWithType: PageCurlView.CancelInteraction
+- uid: PageCurl.Maui.PageCurlView.CreateLayoutManager
+  name: CreateLayoutManager()
+  href: api/PageCurl.Maui.PageCurlView.html#PageCurl_Maui_PageCurlView_CreateLayoutManager
+  commentId: M:PageCurl.Maui.PageCurlView.CreateLayoutManager
+  fullName: PageCurl.Maui.PageCurlView.CreateLayoutManager()
+  nameWithType: PageCurlView.CreateLayoutManager()
+- uid: PageCurl.Maui.PageCurlView.CreateLayoutManager*
+  name: CreateLayoutManager
+  href: api/PageCurl.Maui.PageCurlView.html#PageCurl_Maui_PageCurlView_CreateLayoutManager_
+  commentId: Overload:PageCurl.Maui.PageCurlView.CreateLayoutManager
+  fullName: PageCurl.Maui.PageCurlView.CreateLayoutManager
+  nameWithType: PageCurlView.CreateLayoutManager
 - uid: PageCurl.Maui.PageCurlView.FlickEnabled
   name: FlickEnabled
   href: api/PageCurl.Maui.PageCurlView.html#PageCurl_Maui_PageCurlView_FlickEnabled
@@ -2842,6 +2854,18 @@ references:
   commentId: Overload:PageCurl.Maui.PageSpreadView.CancelInteraction
   fullName: PageCurl.Maui.PageSpreadView.CancelInteraction
   nameWithType: PageSpreadView.CancelInteraction
+- uid: PageCurl.Maui.PageSpreadView.CreateLayoutManager
+  name: CreateLayoutManager()
+  href: api/PageCurl.Maui.PageSpreadView.html#PageCurl_Maui_PageSpreadView_CreateLayoutManager
+  commentId: M:PageCurl.Maui.PageSpreadView.CreateLayoutManager
+  fullName: PageCurl.Maui.PageSpreadView.CreateLayoutManager()
+  nameWithType: PageSpreadView.CreateLayoutManager()
+- uid: PageCurl.Maui.PageSpreadView.CreateLayoutManager*
+  name: CreateLayoutManager
+  href: api/PageCurl.Maui.PageSpreadView.html#PageCurl_Maui_PageSpreadView_CreateLayoutManager_
+  commentId: Overload:PageCurl.Maui.PageSpreadView.CreateLayoutManager
+  fullName: PageCurl.Maui.PageSpreadView.CreateLayoutManager
+  nameWithType: PageSpreadView.CreateLayoutManager
 - uid: PageCurl.Maui.PageSpreadView.FlickEnabled
   name: FlickEnabled
   href: api/PageCurl.Maui.PageSpreadView.html#PageCurl_Maui_PageSpreadView_FlickEnabled
